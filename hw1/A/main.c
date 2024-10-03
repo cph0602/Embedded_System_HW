@@ -751,12 +751,10 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	static uint32_t pressTime = 0;
-//	static uint32_t a=0;
 
 	switch (GPIO_Pin)
 	{
 	case BUTTON_EXTI13_Pin:
-//		GPIO_PinState temp = HAL_GPIO_ReadPin(GPIOB, BUTTON_EXTI13_Pin);
 		if (HAL_GPIO_ReadPin(GPIOC, BUTTON_EXTI13_Pin) == GPIO_PIN_RESET) {
 			pressTime = HAL_GetTick();  // Record the time when the button is pressed
 		}
